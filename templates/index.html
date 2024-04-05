@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculateur d'exponentiation modulaire</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculateur d'exponentiation modulaire</h1>
+        <form action="/calculate" method="POST" onsubmit="return validateForm()">
+            <div id="error" style="color: red; margin-bottom: 10px;"></div>
+            <label for="base">Base :</label>
+            <input type="text" name="base" id="base" required><br><br>
+            <label for="exponent">Exposant :</label>
+            <input type="text" name="exponent" id="exponent" required><br><br>
+            <label for="modulus">Modulo :</label>
+            <input type="text" name="modulus" id="modulus" required><br><br>
+            <button type="submit">Calculer</button>
+        </form>
+        {% if result %}
+        <h2>Résultat : {{ result }}</h2>
+        {% endif %}
+    </div>
+
+    <!-- Include footer -->
+    {% include 'footer.html' %}
+
+    <script>
+        function validateForm() {
+            var base = document.getElementById('base').value;
+            var exponent = document.getElementById('exponent').value;
+            var modulus = document.getElementById('modulus').value;
+
+            if (!Number.isInteger(parseInt(base)) || !Number.isInteger(parseInt(exponent)) || !Number.isInteger(parseInt(modulus))) {
+                document.getElementById('error').innerText = "Veuillez entrer uniquement des nombres entiers.";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

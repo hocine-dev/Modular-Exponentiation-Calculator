@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 def mod_exp(base, exponent, modulus):
     """
-    Fast exponentiation algorithm
+    Fast exponentiation algorithme
     """
     result = 1
     while exponent > 0:
