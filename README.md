@@ -1,0 +1,1 @@
+Based on the fast exponentiation algorithm, I have created an application for calculating modular exponentiation using Python and Flask. The application is simple and easy to use, and it's responsive on all devices.
