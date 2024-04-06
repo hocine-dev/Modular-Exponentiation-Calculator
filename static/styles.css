@@ -85,3 +85,10 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 767px) {
+  /* Apply transform only on screens smaller than 768px (typical for mobile devices) */
+  .container {
+    transform: translateX(5%);
+  }
+}
